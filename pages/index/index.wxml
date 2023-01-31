@@ -1,0 +1,35 @@
+<!-- 轮播图 -->
+<view class="banner">
+  <swiper autoplay="true" interval="3000" circular="ture" bindchange="swiperChange">
+    <swiper-item wx:for="{{bannerArr}}" wx:key="index">
+      <image src="{{item.image}}" mode="" />
+      <view class="banner-info"> {{item.title}} </view>
+    </swiper-item>
+  </swiper>
+  <view class='banner-num'>
+    {{current}}/{{bannerArr.length}}
+  </view>
+</view>
+<!-- 每日一车 -->
+<view class='oneday'>
+  <view class='item'>
+    <image src='../../images/info_left.jpg'></image>
+    <view>每日一测</view>
+  </view>
+   <view class='item'>
+    <image src='../../images/info_right.jpg'></image>
+    <view>每日食谱</view>
+  </view>
+</view>
+<view class='wrapper'>
+  <view class='list' wx:for='{{list}}' wx:key='index' bindtap='tiao' data-mark='{{item.id}}'>
+      <view class='title'>{{item.title}}</view>
+      <view class='list-info'>
+          <image src='{{item.image}}'></image>
+          <view class='info'>
+            <view class='desc'>{{item.desc}}</view>
+            <view class="readnum"><text>{{item.readNum}}</text>次阅读</view>
+        </view>
+      </view>
+  </view>
+</view>

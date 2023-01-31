@@ -1,0 +1,26 @@
+<!--pages/food/food.wxml-->
+<!-- 搜索 -->
+<view class="header">
+  <navigator url="../citys/citys" class="location">{{location}}</navigator>
+  <view class="inp">
+    <navigator url="../search/search"  hover-class="none" class='nav'>请输入内容</navigator>
+  </view>
+</view>
+<!-- 分类 -->
+<view>
+  <view class="navBar">
+    <navigator url="../list/list?mark={{item.id}}" wx:for="{{navBarArr}}" wx:key="index" class="item">
+    <image src="{{item.imgUrl}}" mode=""/>
+    <view>
+      {{item.name}}
+    </view>
+    </navigator>
+  </view>
+</view>
+<!-- 列表 -->
+<import src="../templates/list"/>
+<view wx:for="{{listArr}}" wx:key="index">
+  <template is="productList" data="{{item}}">
+  </template>
+</view>
+<view>{{msg}}</view>

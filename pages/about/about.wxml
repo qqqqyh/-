@@ -1,0 +1,9 @@
+<!--pages/about/about.wxml-->
+<view class="myName">
+  <image class="img" src="{{userInfo.avatarUrl}}" mode=""/>
+  <view class="name">{{userInfo.nickName}}</view>
+</view>
+<view>
+  <button bindtap="login" class="{{className}}">登录
+  </button>
+</view>
